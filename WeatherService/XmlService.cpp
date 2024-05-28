@@ -1,5 +1,6 @@
 #include "XmlService.h"
-
+#include "pugixml.hpp"
+using namespace pugi;
 Weather XmlService::getWeather(std::string s)
 {
     pugi::xml_document doc;
@@ -13,6 +14,6 @@ Weather XmlService::getWeather(std::string s)
     double temperature = node.child("temperature").attribute("value").as_double();
     std::string weather = node.child("weather").attribute("value").as_string();
     double windSpeed = node.child("wind").attribute("speed").as_double();
-    int clouds = node.child("clouds").attribute("all").as_int();
+    int clouds = node.child("clouds").attribute("value").as_int();
     return Weather(city, lon, lat, temperature, weather, windSpeed, clouds);
 }
