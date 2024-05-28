@@ -11,6 +11,16 @@ Weather::Weather(std::string city, double lon, double lat, double temperature, s
 	this->clouds = clouds;
 }
 
+void Weather::printWeather()
+{
+	std::cout << "Данные о погоде в городе " << city;
+	std::cout << "\n\nШирота: " << lat << "\nДолгота: " << lon;
+	std::cout << "\n\nТемпуратура: " << temperature;
+	std::cout << "\nПогода: " << weather;
+	std::cout << "\nСкорость ветра: " << windSpeed;
+	std::cout << "\nВлажность воздуха: " << clouds << "\n";
+}
+
 Weather::~Weather()
 {
 }

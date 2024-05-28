@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 class Weather
 {
 private:
@@ -13,6 +14,7 @@ private:
 public:
 	Weather(std::string city, double lon, double lat, double temperature,
 		std::string weather, double windSpeed, int clouds);
+	void printWeather();
 	~Weather();
 };
 
