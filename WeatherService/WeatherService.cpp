@@ -10,8 +10,11 @@
 int main()
 {
     setlocale(LC_ALL, "ru");
+    JsonService js;
+    Weather w1 = js.getWeather("weather.json");
+    w1.printWeather();
     XmlService xs;
-    Weather w = xs.getWeather("weather.xml");
-    w.printWeather();
+    Weather w2 = xs.getWeather("weather.xml");
+    w2.printWeather();
     return 0;
 }
